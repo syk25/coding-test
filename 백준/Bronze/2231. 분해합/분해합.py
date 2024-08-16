@@ -1,17 +1,8 @@
 n = int(input())
-answer = 0
+def find_constructor(n):
+    for i in range(n):
+        if i + sum(int(digit) for digit in str(i)) == n:
+            return i
+    return 0
 
-for i in range(n):
-    check, temp = i, i
-    while check > 0:
-        r = check % 10
-        temp += r
-        check //= 10
-    if temp == n:
-        answer = i
-        break
-
-print(answer)
-
-
-
+print(find_constructor(n))
