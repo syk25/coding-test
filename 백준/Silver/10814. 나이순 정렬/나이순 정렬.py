@@ -1,7 +1,11 @@
-members = [list(input().strip().split()) for x in range(int(input()))]
+members = []
 
+for i in range(int(input())):
+    member = input()
+    age = int(list(member.split())[0])
+    members.append((age, member))
 
-members = sorted(members, key=lambda x: int(x[0]))
+members.sort(key=lambda x:x[0])
 
 for member in members:
-    print(" ".join(member))
+    print(member[1])
